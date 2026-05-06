@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_tech/core/styles/colors_managers.dart';
 import 'package:health_tech/core/styles/styles_managers.dart';
 import 'package:health_tech/core/widgets/primary_buttom.dart';
 import 'package:health_tech/features/onboarding/widgets/onboarding-star_image.dart';
@@ -11,6 +12,7 @@ class OnboardingSecScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: ColorManager.white,
       body: Column(
         children: [
           OnboardingStartImage(height: height),
@@ -25,7 +27,7 @@ class OnboardingSecScreen extends StatelessWidget {
                     'Your health, just one tap away.',
 
                     textAlign: TextAlign.start,
-                    style: StylesManager.onboardingPrimaryText,
+                    style: StylesManager.black24,
                   ),
                   SizedBox(height: height * 0.01),
                   SizedBox(
@@ -33,7 +35,7 @@ class OnboardingSecScreen extends StatelessWidget {
                     child: Text(
                       "With HealthTech, you can instantly book appointments, get reminders, and focus on what truly matters — your well-being. Ready to begin",
                       textAlign: TextAlign.start,
-                      style: StylesManager.onboardingSecandaryText,
+                      style: StylesManager.grey16,
                     ),
                   ),
                   SizedBox(height: height * 0.06),
