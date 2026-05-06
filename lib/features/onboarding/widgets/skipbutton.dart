@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_tech/core/styles/colors_managers.dart';
 
 class SkipButton extends StatelessWidget {
   const SkipButton({super.key});
@@ -13,6 +14,7 @@ class SkipButton extends StatelessWidget {
         },
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.all(20),
+          backgroundColor: ColorManager.secondaryColorLightBlue,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),

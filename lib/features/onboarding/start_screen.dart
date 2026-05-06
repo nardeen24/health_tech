@@ -11,6 +11,7 @@ class StartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: ColorManager.white,
       body: Column(
         children: [
           OnboardingStartImage(height: height),
@@ -31,7 +32,7 @@ class StartScreen extends StatelessWidget {
                   child: Text(
                     "We are here to provide the innovative and integrated healthcare you deserve, anytime and anywhere.",
                     textAlign: TextAlign.start,
-                    style: StylesManager.onboardingSecandaryText,
+                    style: StylesManager.grey16,
                   ),
                 ),
                 SizedBox(height: height * 0.06),
