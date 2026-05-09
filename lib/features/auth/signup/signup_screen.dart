@@ -118,7 +118,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       BlocConsumer<AuthCubit, AuthState>(
                         listener: (context, state) {
                           if (state is SignupSuccessState) {
-                            Navigator.pushNamed(context, '/home');
+                            Navigator.pushNamed(context, '/mainNavigation');
                           }
                         },
                         builder: (BuildContext context, AuthState state) {

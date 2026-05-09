@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:health_tech/core/styles/colors_managers.dart';
-import 'package:health_tech/features/home/main_navigation/main_navigation.dart';
 import 'package:health_tech/features/home/widgets/card_doctor.dart';
 import 'package:health_tech/features/home/see_all_screen.dart';
 import 'package:health_tech/features/home/widgets/header_widget.dart';
