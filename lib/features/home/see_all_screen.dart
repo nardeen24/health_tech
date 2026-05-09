@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:health_tech/core/styles/colors_managers.dart';
-import 'package:health_tech/core/widgets/card_doctor.dart';
+import 'package:health_tech/features/home/widgets/card_doctor.dart';
 
 class SeeAllScreen extends StatelessWidget {
   const SeeAllScreen({super.key});

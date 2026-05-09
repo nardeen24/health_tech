@@ -5,7 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:health_tech/features/auth/cubit/auth_cubit.dart';
 import 'package:health_tech/features/auth/login/login_screen.dart';
 import 'package:health_tech/features/auth/signup/signup_screen.dart';
+import 'package:health_tech/features/favorites/favorites_screen.dart';
 import 'package:health_tech/features/home/home_screen.dart';
+import 'package:health_tech/features/home/main_navigation/main_navigation.dart';
 import 'package:health_tech/features/onboarding/onboarding_screen.dart';
 import 'package:health_tech/features/splash/splash_screen.dart';
 import 'package:health_tech/firebase_options.dart';
@@ -34,7 +36,9 @@ class MyApp extends StatelessWidget {
             '/onboarding_page': (context) => const OnboardingScreen(),
             '/login': (context) => const LoginScreen(),
             '/signup': (context) => const SignupScreen(),
+            '/mainNavigation' :(context)=> MainNavigation(),
             '/home': (context) => const HomeScreen(),
+            '/favorites': (context) => const FavoritesScreen(),
           },
         ),
       ),
