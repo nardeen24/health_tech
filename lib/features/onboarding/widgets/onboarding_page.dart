@@ -18,7 +18,7 @@ class OnboardingPage extends StatelessWidget {
     required this.onpressed,
     required this.buttomText,
     required this.showSkipButton,
-    this.bottomWidget
+    this.bottomWidget,
   });
 
   @override
@@ -59,7 +59,7 @@ class OnboardingPage extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacementNamed(context, '/start');
+                          Navigator.pushReplacementNamed(context, '/signup');
                         },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.all(20),
@@ -74,19 +74,16 @@ class OnboardingPage extends StatelessWidget {
                         ),
                       ),
                     ),
-
-
-
                   ],
-                
-                 if (bottomWidget != null) ...[
+
+                  if (bottomWidget != null) ...[
                     SizedBox(height: height * 0.01),
                     bottomWidget!,
                   ],
                 ],
               ),
             ),
-          ),  
+          ),
         ],
       ),
     );
