@@ -4,7 +4,11 @@ import 'package:health_tech/core/styles/colors_managers.dart';
 class PraimaryButtom extends StatelessWidget {
   final String text;
   final VoidCallback onpressed;
-  const PraimaryButtom({super.key, required this.text,required this.onpressed});
+  const PraimaryButtom({
+    super.key,
+    required this.text,
+    required this.onpressed,
+  });
 
   @override
   Widget build(BuildContext context) {

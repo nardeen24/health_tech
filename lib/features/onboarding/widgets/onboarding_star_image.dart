@@ -1,11 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 class OnboardingStartImage extends StatelessWidget {
-  const OnboardingStartImage({
-    super.key,
-    required this.height,
-  });
+  const OnboardingStartImage({super.key, required this.height});
 
   final double height;
 
@@ -16,7 +12,7 @@ class OnboardingStartImage extends StatelessWidget {
       child: Image.asset(
         'assets/images/onboarding_image.png',
         width: double.infinity,
-        height: height * 0.50,
+        height: height * 0.5,
         fit: BoxFit.cover,
       ),
     );

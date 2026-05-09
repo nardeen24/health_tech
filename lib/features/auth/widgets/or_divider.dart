@@ -6,6 +6,8 @@ class OrDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
     return Column(
       children: [
         Row(
@@ -21,14 +23,14 @@ class OrDivider extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(width: 10),
+            SizedBox(width: width * 0.1),
 
             Text(
               "Or continue with",
               style: TextStyle(color: ColorManager.greyColor),
             ),
 
-            const SizedBox(width: 10),
+            SizedBox(width: width * 0.1),
 
             Expanded(
               child: Container(
@@ -45,7 +47,7 @@ class OrDivider extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: height * 0.001),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

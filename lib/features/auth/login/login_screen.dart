@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:health_tech/core/styles/colors_managers.dart';
 import 'package:health_tech/core/widgets/primary_buttom.dart';
+import 'package:health_tech/features/auth/cubit/auth_cubit.dart';
+import 'package:health_tech/features/auth/cubit/auth_states.dart';
 import 'package:health_tech/features/auth/widgets/custom_text_form_feild.dart';
 import 'package:health_tech/features/auth/widgets/or_divider.dart';
 
@@ -56,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       fit: BoxFit.contain,
                     ),
                   ),
-                  SizedBox(height: height * 0.035),
+                  SizedBox(height: height * 0.033),
 
                   Text(
                     'Log in ',
@@ -90,35 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       return null;
                     },
                   ),
-                  // SizedBox(height: height * 0.05),
-                  // BlocConsumer<AuthCubit, AuthState>(
-                  //   listener: (context, state) {
-                  //     if (state is LoginSuccessState) {
-                  //       Navigator.pushNamed(context, '/home');
-                  //     } else if (state is LoginErrorState) {
-                  //       ScaffoldMessenger.of(context).showSnackBar(
-                  //         SnackBar(content: Text(state.errorMessage)),
-                  //       );
-                  //     }
-                  //   },
-                  //   builder: (context, state) {
-                  //     bool isLoading = state is LoginLoadingState;
-                  //     return ButtonWidget(
-                  //       onpress: isLoading
-                  //           ? () {}
-                  //           : () {
-                  //               if (formKey.currentState!.validate()) {
-                  //                 context.read<AuthCubit>().login(
-                  //                   emailController.text.trim(),
-                  //                   passwordController.text.trim(),
-                  //                 );
-                  //               }
-                  //             },
-                  //       text: isLoading ? 'Logging in...' : 'Log in ',
-                  //     );
-                  //   },
-                  // ),
-
+                  SizedBox(height: height * 0.01),
                   //didnt have an account
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -138,14 +113,37 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
+
                   SizedBox(height: height * 0.02),
-                  PraimaryButtom(
-                    text: 'LogIn',
-                    onpressed: () {
-                      Navigator.pushReplacementNamed(context, '/home');
+                  BlocConsumer<AuthCubit, AuthState>(
+                    listener: (context, state) {
+                      if (state is LoginSuccessState) {
+                        Navigator.pushReplacementNamed(context, '/home');
+                      } else if (state is LoginErrorState) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(state.errorMessage)),
+                        );
+                      }
+                    },
+                    builder: (context, state) {
+                      bool isLoading = state is LoginLoadingState;
+                      return PraimaryButtom(
+                        text: isLoading ? 'Logging in...' : 'Log in',
+                        onpressed: isLoading
+                            ? () {}
+                            : () {
+                                if (formKey.currentState!.validate()) {
+                                  context.read<AuthCubit>().login(
+                                    emailController.text.trim(),
+                                    passwordController.text.trim(),
+                                  );
+                                }
+                              },
+                      );
                     },
                   ),
-                  SizedBox(height: height * 0.03),
+
+                  SizedBox(height: height * 0.02),
                   OrDivider(),
                 ],
               ),

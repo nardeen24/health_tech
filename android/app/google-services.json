@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "764579811073",
+    "project_id": "health-tech-a7191",
+    "storage_bucket": "health-tech-a7191.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764579811073:android:46cd2060ef582d86009500",
+        "android_client_info": {
+          "package_name": "com.example.health_tech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzwBvtjcXjdwa7jo61MuOl-6cT1j9s0aE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
