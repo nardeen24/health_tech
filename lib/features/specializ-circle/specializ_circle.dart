@@ -6,7 +6,7 @@ class SpecializCircle extends StatelessWidget {
     super.key,
     required this.image,
     required this.label,
-    this.onTap, // ✅ ضفنا onTap
+    this.onTap, 
   });
 
   final String image;

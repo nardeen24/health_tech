@@ -7,9 +7,30 @@ class FirebaseDataSource {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   //login
-  Future<void> login(String email, String password) async {
-    await _auth.signInWithEmailAndPassword(email: email, password: password);
-  }
+ Future<UserModel> login(String email, String password) async {
+  UserCredential credential =
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+    email: email,
+    password: password,
+  );
+
+  String uid = credential.user!.uid;
+
+  DocumentSnapshot doc = await FirebaseFirestore.instance
+      .collection('users')
+      .doc(uid)
+      .get();
+
+  Map<String, dynamic> data =
+      doc.data() as Map<String, dynamic>;
+
+  return UserModel(
+    email: data['email'],
+    password: data['password'],
+    name: data['name'],
+    fav: data['fav'],
+  );
+}
 
   //signup
   Future<void> signUp(String email, String password, String name) async {

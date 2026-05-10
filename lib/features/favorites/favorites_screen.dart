@@ -10,7 +10,6 @@ class FavoritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Favorites')),
-      // ✅ بنعرض الـ favorites من الـ DoctorCubit مش من global list
       body: BlocBuilder<DoctorCubit, dynamic>(
         builder: (context, state) {
           final cubit = context.read<DoctorCubit>();

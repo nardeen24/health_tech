@@ -3,6 +3,7 @@ import 'package:health_tech/core/styles/colors_managers.dart';
 import 'package:health_tech/features/doctors/widget/top_doc.dart';
 import 'package:health_tech/features/favorites/favorites_screen.dart';
 import 'package:health_tech/features/home/home_screen.dart';
+import 'package:health_tech/features/home/see_all_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
@@ -17,7 +18,7 @@ class _MainNavigationState extends State<MainNavigation> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const FavoritesScreen(),
-    const TopDoctors(),
+    const SeeAllScreen(),
   ];
 
   @override

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:health_tech/core/styles/colors_managers.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({super.key});
+  final String userName;
+  const HeaderWidget({super.key,required this.userName});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class HeaderWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Hi, Aya",
+                      "Hi, $userName",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 22,

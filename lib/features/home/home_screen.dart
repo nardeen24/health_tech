@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:health_tech/core/styles/colors_managers.dart';
+import 'package:health_tech/features/auth/cubit/auth_cubit.dart';
 import 'package:health_tech/features/doctors/cubit/doctor_cubit.dart';
 import 'package:health_tech/features/doctors/cubit/doctor_state.dart';
 import 'package:health_tech/features/doctors/widget/card_doctor.dart';
@@ -24,12 +25,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final authCubit = context.read<AuthCubit>();
+    final userName = authCubit.currentUserName ?? 'User';
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HeaderWidget(),
+            HeaderWidget(userName: userName),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -44,13 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: ColorManager.primaryColor,
-                        ),
-                      ),
-                      const Text(
-                        "See All",
-                        style: TextStyle(
-                          color: ColorManager.primaryColor,
-                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ],
@@ -102,13 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const SeeAllScreen(),
-                            ),
-                          );
-                        },
+                        onPressed: () => _navigateToDoctorsBySpec(context, ""),
                         child: const Text(
                           "See All",
                           style: TextStyle(
