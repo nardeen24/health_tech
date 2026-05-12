@@ -14,6 +14,10 @@ class AuthCubit extends Cubit<AuthState> {
     emit(SignupLoadingState());
     try {
       await firebaseDataSource.signUp(email, password, name);
+      //depugprint
+
+   
+
       print('Signup successful');
       currentUserName = name;
       emit(SignupSuccessState('Signup successful', currentUserName!));

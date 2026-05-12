@@ -1,11 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:health_tech/core/styles/colors_managers.dart';
 
 class ButtomWidget extends StatelessWidget {
-  const ButtomWidget({
-    super.key,
-  });
+  const ButtomWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
